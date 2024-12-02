@@ -22,8 +22,22 @@ namespace PiramideRectangularFinalProg.Entidades
             Altura = altura;
             Material = material;
         }
-
-
+        public double AreaTotal
+        {
+            get
+            {
+                double areaBase = LadoBase * LadoBase;
+                double areaLateral = (LadoBase * Altura) / 2;
+                return areaBase + (4 * areaLateral);
+            }
+        }
+        public double Volumen
+        {
+            get
+            {
+                return (AreaTotal * Altura) / 3;
+            }
+        }
         private int CalcularAreaBase()
         {
             return LadoBase * LadoBase;

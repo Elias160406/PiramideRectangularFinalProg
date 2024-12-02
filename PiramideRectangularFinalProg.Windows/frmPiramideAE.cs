@@ -73,7 +73,7 @@ namespace PiramideRectangularFinalProg.Windows
               
                 if (repositorio.AgregarPiramide(piramide))
                 {
-                    MessageBox.Show($"Piramide creada:{piramide.InformarDatos()}", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Piramide creada");
                     this.DialogResult = DialogResult.OK; 
                 }
                 else

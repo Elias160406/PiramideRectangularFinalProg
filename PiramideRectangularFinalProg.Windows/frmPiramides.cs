@@ -26,27 +26,30 @@ namespace PiramideRectangularFinalProg.Windows
         }
         private void ActualizarGrilla()
         {
-            
             dgvDatos.DataSource = null;
-
-            
-            dgvDatos.DataSource = repositorio.ObtenerPiramides();
-            
             dgvDatos.Columns.Clear();
 
-            
-            dgvDatos.Columns.Add("LadoBase", "Lado Base");
-            dgvDatos.Columns.Add("Altura", "Altura");
+            dgvDatos.Columns.Add("Lado", "Lado Base");
+            dgvDatos.Columns.Add("Cantidad", "Cantidad de Lados");
             dgvDatos.Columns.Add("Material", "Material");
+            dgvDatos.Columns.Add("Volumen", "Volumen");
+            dgvDatos.Columns.Add("Area", "Área Total");
 
-            
             foreach (var piramide in repositorio.ObtenerPiramides())
             {
-                dgvDatos.Rows.Add(piramide.LadoBase, piramide.Altura, piramide.Material);
+                dgvDatos.Rows.Add(
+                    piramide.LadoBase,
+                    4,
+                    piramide.Material.ToString(),
+                    piramide.Volumen.ToString("F2"),
+                    piramide.AreaTotal.ToString("F2")
+                );
             }
         }
     }
     }
+        
 
- 
+
+
 
